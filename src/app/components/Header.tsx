@@ -3,10 +3,10 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="w-full h-40 bg-gray-800 text-gray-300 flex justify-center items-center flex-col gap-6">
-      <h1 className="text-4xl">shunD_ahoy</h1>
+    <header className="w-full h-40 container mx-auto flex items-center justify-center flex-col gap-6">
+      <h1 className="text-4xl">しゅんだほいの技術ブログ</h1>
       <nav>
-        <ul className="flex justify-center gap-4">
+        <ul className="flex justify-center gap-6 text-sm">
           <li>
             <Link href="/">ホーム</Link>
           </li>

@@ -16,11 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className="">
+      <body className="bg-gray-900 text-gray-50">
         <Header />
         <div className="container mx-auto grid grid-cols-4 gap-8 pt-8">
-          <div className="col-span-3 px-4">{children}</div>
-          <div className="col-span-1 px-4">
+          <div className="col-span-3 p-4 bg-gray-800">{children}</div>
+          <div className="col-span-1 p-4 bg-gray-800">
             <Sidebar />
           </div>
         </div>

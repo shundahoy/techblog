@@ -5,7 +5,9 @@ import React from "react";
 async function getTags() {
   const response = await client.getList({
     customRequestInit: {
-      cache: "no-store",
+      next: {
+        revalidate: 60,
+      },
     },
     endpoint: "tags",
   });
@@ -21,7 +23,10 @@ const TagsList = async () => {
         <h3>タグ一覧</h3>
       </li>
       {tags.contents.map((tag) => (
-        <li className="px-4 py-4 border-b border-gray-800 border-solid text-sm">
+        <li
+          key={tag.id}
+          className="px-4 py-4 border-b border-gray-800 border-solid text-sm"
+        >
           <Link className="block" href={`/tag/${tag.id}/1`}>
             #{tag.name}
           </Link>

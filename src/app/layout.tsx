@@ -18,8 +18,8 @@ export default function RootLayout({
     <html lang="ja">
       <body className="bg-gray-900 text-gray-50">
         <Header />
-        <div className="max-w-[1400px] mx-auto grid grid-cols-4 gap-8 pt-8 px-4">
-          <div className="col-span-4 lg:col-span-3 px-6">{children}</div>
+        <div className="max-w-[1400px] mx-auto grid grid-cols-4 gap-8 pt-8 px-6">
+          <div className="col-span-4 lg:col-span-3">{children}</div>
           <div className="col-span-4 lg:col-span-1">
             <Sidebar />
           </div>

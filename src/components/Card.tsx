@@ -9,7 +9,7 @@ interface PageProps {
 const Card = ({ blog }: PageProps) => {
   return (
     <div className="w-full bg-gray-900 rounded-2xl overflow-hidden pb-4 border border-gray-700 border-solid">
-      <div className="w-full h-[180px] relative">
+      <div className="w-full relative" style={{ paddingBottom: "60%" }}>
         <Image
           src={blog.cover.url}
           fill={true}
@@ -23,7 +23,11 @@ const Card = ({ blog }: PageProps) => {
         </Link>
         <div className="mt-4 flex gap-2 flex-wrap">
           {blog.tags.map((tag) => (
-            <Link href={`/tag/${tag.slug}`} className="text-xs text-gray-400">
+            <Link
+              key={tag.id}
+              href={`/tag/${tag.slug}`}
+              className="text-xs text-gray-400"
+            >
               #{tag.name}
             </Link>
           ))}

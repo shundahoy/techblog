@@ -1,14 +1,15 @@
 import { perPage } from "@/const";
 import { client } from "@/lib/client";
 import { Pagination } from "@/components/Pagination";
-import Image from "next/image";
 import Card from "@/components/Card";
 import { BLOG } from "@/types/types";
 
 async function getPosts() {
   const response = await client.getList({
     customRequestInit: {
-      cache: "no-store",
+      next: {
+        revalidate: 60,
+      },
     },
     endpoint: "blogs",
     queries: { offset: 0, limit: perPage },

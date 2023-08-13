@@ -23,7 +23,9 @@ async function getPost(params: { page: string }) {
 
   const response = await client.getList({
     customRequestInit: {
-      cache: "no-store",
+      next: {
+        revalidate: 60,
+      },
     },
     endpoint: "blogs",
     queries: { offset: (pageNumber - 1) * perPage, limit: perPage },

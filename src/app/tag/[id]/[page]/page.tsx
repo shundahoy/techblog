@@ -39,7 +39,9 @@ async function getPost(params: { page: string; id: string }) {
 
   const response = await client.getList({
     customRequestInit: {
-      cache: "no-store",
+      next: {
+        revalidate: 60,
+      },
     },
     endpoint: "blogs",
     queries: {

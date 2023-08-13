@@ -16,13 +16,13 @@ async function getTags() {
 const TagsList = async () => {
   const tags = await getTags();
   return (
-    <ul className="rounded border-gray-600 border-solid border">
-      <li className="px-4 py-4 bg-gray-500">
+    <ul className="rounded border-gray-800 border-solid border">
+      <li className="px-4 py-4 bg-gray-800">
         <h3>タグ一覧</h3>
       </li>
       {tags.contents.map((tag) => (
-        <li className="px-4 py-4 border-b border-gray-600 border-solid text-sm">
-          <Link className="block" href={`/tag/${tag.slug}`}>
+        <li className="px-4 py-4 border-b border-gray-800 border-solid text-sm">
+          <Link className="block" href={`/tag/${tag.id}/1`}>
             #{tag.name}
           </Link>
         </li>

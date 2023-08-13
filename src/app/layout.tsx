@@ -20,7 +20,7 @@ export default function RootLayout({
         <Header />
         <div className="max-w-[1400px] mx-auto grid grid-cols-4 gap-8 pt-8 px-4">
           <div className="col-span-4 lg:col-span-3 px-6">{children}</div>
-          <div className="col-span-4 lg:col-span-1 bg-gray-800">
+          <div className="col-span-4 lg:col-span-1">
             <Sidebar />
           </div>
         </div>

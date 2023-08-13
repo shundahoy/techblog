@@ -23,7 +23,7 @@ export const Pagination = ({ totalCount, nowPage }: PaginationProps) => {
           }`}
         >
           <Link
-            className="block px-4 py-2 flex items-center justify-center rounded"
+            className="px-4 py-2 flex items-center justify-center rounded"
             href={`/blog/page/${number}`}
           >
             {number}

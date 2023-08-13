@@ -8,7 +8,7 @@ interface PageProps {
 }
 const Card = ({ blog }: PageProps) => {
   return (
-    <div className="w-full bg-gray-800 rounded-2xl overflow-hidden pb-4 border-2 border-gray-500 border-solid">
+    <div className="w-full bg-gray-900 rounded-2xl overflow-hidden pb-4 border border-gray-500 border-solid">
       <div className="w-full h-40 relative">
         <Image
           src={blog.cover.url}

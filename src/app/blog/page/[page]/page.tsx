@@ -2,6 +2,7 @@ import Card from "@/components/Card";
 import { Pagination } from "@/components/Pagination";
 import { perPage } from "@/const";
 import { client } from "@/lib/client";
+import { BLOG } from "@/types/types";
 import React from "react";
 
 export async function generateStaticParams() {

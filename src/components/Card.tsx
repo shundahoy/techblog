@@ -25,7 +25,7 @@ const Card = ({ blog }: PageProps) => {
           {blog.tags.map((tag) => (
             <Link
               key={tag.id}
-              href={`/tag/${tag.slug}`}
+              href={`/tag/${tag.id}/1`}
               className="text-xs text-gray-400"
             >
               #{tag.name}

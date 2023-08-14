@@ -5,3 +5,34 @@
 .dark-text {
   color: #ededed;
 }
+
+.post > h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 40px 0 20px;
+  background-color: #eee;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.post > h2 {
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+  margin-top: 56px;
+}
+
+.post > p {
+  line-height: 1.8;
+  letter-spacing: 0.2px;
+}
+
+.post > ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+.post > * {
+  margin-bottom: 16px;
+  max-width: 100%;
+}

@@ -2,6 +2,9 @@ import { client } from "@/lib/client";
 import { BLOG } from "@/types/types";
 import Image from "next/image";
 import React from "react";
+import cheerio from "cheerio";
+import hljs from "highlight.js";
+import "highlight.js/styles/tokyo-night-dark.css";
 
 const getAllContents = async (offset = 0, limit = 10): Promise<BLOG[]> => {
   const data = await client.getList({
@@ -46,8 +49,16 @@ interface PageProps {
 const Page = async ({ params }: PageProps) => {
   const post = await getDetail(params);
 
+  const $ = cheerio.load(post.body);
+  $("pre code").each((_, elm) => {
+    const result = hljs.highlightAuto($(elm).text());
+    $(elm).html(result.value);
+    $(elm).addClass("hljs");
+  });
+
   return (
     <main>
+      <h1 className="text-xl sm:text-3xl font-semibold mb-6">{post.title}</h1>
       <div className="relative w-full mb-8" style={{ paddingBottom: "60%" }}>
         <Image
           fill={true}
@@ -56,7 +67,13 @@ const Page = async ({ params }: PageProps) => {
           style={{ width: "100%" }}
         />
       </div>
-      <h2 className="text-xl sm:text-3xl font-semibold">{post.title}</h2>
+
+      <div
+        className="post"
+        dangerouslySetInnerHTML={{
+          __html: `${$.html()}`,
+        }}
+      />
     </main>
   );
 };

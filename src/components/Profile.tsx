@@ -7,7 +7,7 @@ const getProfile = async () => {
     endpoint: `profile`,
     customRequestInit: {
       next: {
-        revalidate: 86400,
+        revalidate: 60,
       },
     },
   });
@@ -16,7 +16,6 @@ const getProfile = async () => {
 };
 const Profile = async () => {
   const profile = await getProfile();
-  console.log(profile);
 
   return (
     <div className="flex items-center flex-col justify-center rounded border-gray-800 border-solid border px-6 py-10 bg-gray-800 mb-6 gap-4">

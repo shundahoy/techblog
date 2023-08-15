@@ -19,7 +19,7 @@ const TagsList = async () => {
   const tags = await getTags();
   return (
     <ul className="rounded border-gray-800 border-solid border">
-      <li className="px-4 py-4 bg-gray-700">
+      <li className="px-4 py-4 bg-gray-800">
         <h3>タグ一覧</h3>
       </li>
       {tags.contents.map((tag) => (

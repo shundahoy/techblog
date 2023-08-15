@@ -27,10 +27,8 @@ const Profile = async () => {
           style={{ objectFit: "cover" }}
         />
       </div>
-      <p className="text-lg">shundahoy</p>
-      <p className="text-sm">
-        渋谷のIT企業でエンジニアをしています。技術スタックはReact,Next,PHP/Laravel
-      </p>
+      <p className="text-lg">{profile.name}</p>
+      <p className="text-sm">{profile.description}</p>
       <ul className="flex flex-wrap gap-4 text-sm">
         <li className="underline">
           <a href={profile.twitter}>Twitter</a>

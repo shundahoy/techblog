@@ -56,6 +56,10 @@ const Page = async ({ params }: PageProps) => {
     $(elm).addClass("hljs");
   });
 
+  if (!post) {
+    return <p className="text-lg">記事はありません</p>;
+  }
+
   return (
     <main>
       <h1 className="text-xl sm:text-3xl font-semibold mb-6">{post.title}</h1>
